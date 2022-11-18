@@ -6,6 +6,7 @@
     <title>My Portfolio | Ahmad Diki Apriansyah</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body id="home">
@@ -40,7 +41,7 @@
     <section class="jumbotron text-center">
       <img src="img/Pas photo.jpg" alt="Photo" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Ahmad Diki Apriansyah</h1>
-      <p class="lead">Fresh Graduate | Programmer</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -60,7 +61,7 @@
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-10">
+          <div class="col-md-10" data-aos="fade-right" data-aos-duration="1000">
             <p>
               Saya memiliki ketertarikan dalam bidang Teknologi saya ingin menjadi seorang Web developer oleh karena itu saya mengikuti program bootcamp di Eduwork agar cita-cita saya dapat terwujud, dari proses pembelajaran tersebut
               akhirnya saya memperoleh skill dan pengetahuan seperti HTML, CSS, Bootstrap, Javascript, React Js, dan masih banyak lagi. Saya merasa senang untuk mempelajari hal-hal baru khususnya di bidang Web Developer.
@@ -87,21 +88,25 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 mb-3">
+          <div class="col-md-6 mb-3" data-aos="flip-left" data-aos-delay="200">
             <div class="card">
               <img src="img/project1.jpg" class="card-img-top" alt="Project 1" />
               <div class="card-body text-center">
                 <p class="card-text text-start">Membuat sebuah Web yang berisi tentang film-film yang di dapat dari API public dilengkapi dengan fitur Search yang bisa digunakan untuk mencari film kesukaan anda.</p>
-                <button type="submit" class="btn btn-primary"><i class="bi bi-github"></i> Github</button>
+                <a href="https://github.com/dikiapr/membuatfrontend" target="_blank"
+                  ><button class="btn btn-primary" type="button"><i class="bi bi-github"></i> Github</button></a
+                >
               </div>
             </div>
           </div>
-          <div class="col-md-6 mb-3">
+          <div class="col-md-6 mb-3" data-aos="flip-right" data-aos-delay="200">
             <div class="card">
               <img src="img/project2.jpg" class="card-img-top" alt="Project 2" />
               <div class="card-body text-center">
                 <p class="card-text text-start">Aplikasi CRUD sederhana yang dibuat menggunakan Node JS, Express, & MongoDB hal ini merupakan salah satu bagian dasar dari back end yang penting.</p>
-                <button type="submit" class="btn btn-primary"><i class="bi bi-github"></i> Github</button>
+                <a href="https://github.com/dikiapr/CRUD_fullstack" target="_blank"
+                  ><button class="btn btn-primary" type="button"><i class="bi bi-github"></i> Github</button></a
+                >
               </div>
             </div>
           </div>
@@ -170,6 +175,21 @@
     <!-- Akhir Footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to(".lead", { duration: 2, delay: 1.5, text: "Fresh Graduate | Programmer" });
+      gsap.from(".jumbotron img", { duration: 1, rotateY: 360, opacity: 0 });
+      gsap.from(".navbar", { duration: 1.5, y: "-100%", opacity: 0, ease: "bounce" });
+      gsap.from(".display-4", { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: "back" });
+    </script>
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbyGyb_KNcCIXijB_ba_IRlsvIr4TkFjjK3gzbaW6KGLO5yVfnDrUzELBdCyAgt5fNt7iQ/exec";
       const form = document.forms["contact-form"];
